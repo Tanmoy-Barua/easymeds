@@ -1,4 +1,7 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php'); 
+header("location: index.php");
+
+?>
 
 <section class="content-header">
 	<div class="content-header-left">

@@ -264,12 +264,12 @@ foreach ($result as $row) {
 	$size_id[] = $row['size_id'];
 }
 
-$statement = $pdo->prepare("SELECT * FROM tbl_product_color WHERE p_id=?");
-$statement->execute(array($_REQUEST['id']));
-$result = $statement->fetchAll(PDO::FETCH_ASSOC);							
-foreach ($result as $row) {
-	$color_id[] = $row['color_id'];
-}
+// $statement = $pdo->prepare("SELECT * FROM tbl_product_color WHERE p_id=?");
+// $statement->execute(array($_REQUEST['id']));
+// $result = $statement->fetchAll(PDO::FETCH_ASSOC);							
+// foreach ($result as $row) {
+// 	$color_id[] = $row['color_id'];
+// }
 ?>
 
 
@@ -401,31 +401,31 @@ foreach ($result as $row) {
 								</select>
 							</div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="" class="col-sm-3 control-label">Select Color</label>
 							<div class="col-sm-4">
-								<select name="color[]" class="form-control select2" multiple="multiple">
+								<select name="color[]" class="form-control select2" multiple="multiple"> -->
 									<?php
-									$is_select = '';
-									$statement = $pdo->prepare("SELECT * FROM tbl_color ORDER BY color_id ASC");
-									$statement->execute();
-									$result = $statement->fetchAll(PDO::FETCH_ASSOC);			
-									foreach ($result as $row) {
-										if(isset($color_id)) {
-											if(in_array($row['color_id'],$color_id)) {
-												$is_select = 'selected';
-											} else {
-												$is_select = '';
-											}
-										}
+									// $is_select = '';
+									// $statement = $pdo->prepare("SELECT * FROM tbl_color ORDER BY color_id ASC");
+									// $statement->execute();
+									// $result = $statement->fetchAll(PDO::FETCH_ASSOC);			
+									// foreach ($result as $row) {
+									// 	if(isset($color_id)) {
+									// 		if(in_array($row['color_id'],$color_id)) {
+									// 			$is_select = 'selected';
+									// 		} else {
+									// 			$is_select = '';
+									// 		}
+									// 	}
 										?>
-										<option value="<?php echo $row['color_id']; ?>" <?php echo $is_select; ?>><?php echo $row['color_name']; ?></option>
+										<!-- <option value="<?php //echo $row['color_id']; ?>" <?php //echo $is_select; ?>><?php //echo $row['color_name']; ?></option> -->
 										<?php
-									}
+									// }
 									?>
-								</select>
+								<!-- </select>
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label">Existing Featured Photo</label>
 							<div class="col-sm-4" style="padding-top:4px;">
